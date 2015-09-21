@@ -3,14 +3,13 @@ var Sequelize = require('sequelize');
 var db = require('./db')
 
 module.exports = {
-  getSites: function() {
+  getSites: function(request, response) {
     db.Site.findAll().then(function(sites) {
       response.json(sites)
     })
   },
 
-  addSite: function(request) {
-
+  addSite: function(request, response) {
     var name = request.body.name
     var url = request.body.url
 

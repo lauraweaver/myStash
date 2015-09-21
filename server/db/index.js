@@ -6,7 +6,7 @@ var User = sequelize.define('User', {
   id: { type: Sequelize.INTEGER, autoIncrement: true, allowNull: false, primaryKey: true },
   name: { type: Sequelize.STRING(32), allowNull: false },
   password: { type: Sequelize.STRING(32) },
-  sessionId: { type: Sequelize.STRING(256), allowNull: false }
+  sessionId: { type: Sequelize.STRING(256) }
 });
 
 var Maker = sequelize.define('Maker', {
@@ -30,6 +30,7 @@ var Product = sequelize.define('Product', {
   color: { type: Sequelize.STRING(32) },
   notes: { type: Sequelize.STRING(140) },
   size: { type: Sequelize.STRING(32) }
+  OwnerId: { type: Sequelize.STRING(32) }
 });
 
 var Site = sequelize.define('Site', {

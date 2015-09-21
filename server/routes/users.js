@@ -2,7 +2,6 @@ var users = require('../controllers/users')
 
 module.exports = function (router) {
   router.route('users/signup')
-    .get(users.loadSignup)
     .post(users.attemptSignup);
 
   router.route('users/login')
@@ -12,5 +11,5 @@ module.exports = function (router) {
     .get(users.checkStatus)
 
   router.route('users/logout')
-    .post(users.attemptLogin);
+    .post(users.logout);
 }
