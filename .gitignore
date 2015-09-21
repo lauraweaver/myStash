@@ -1,0 +1,19 @@
+###OSX###
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+###Node###
+
+npm-debug.log
+node_modules
+
+###SublimeText###
+
+# SublimeText project files
+*.sublime-workspace
+
+# bower
+client/bower_components
