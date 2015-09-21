@@ -14,8 +14,9 @@ app.use(session({secret:'fartmonster'}));
 var apiRouter = express.Router();
 app.use('/api', apiRouter)
 
-require('./home/homeRoutes.js')(apiRouter);
+require('./user/userRoutes.js')(apiRouter);
 require('./sites/sitesRoutes.js')(apiRouter);
+//edit
 
 db.sync().then(function() {
   app.listen(3000);
