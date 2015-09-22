@@ -4,6 +4,8 @@ var session = require('express-session');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 
+var app = express();
+
 app.use(express.static(__dirname + '/../client'));
 app.use(morgan('dev'));
 // app.use(bodyParser.urlencoded({extended: true}));
@@ -15,9 +17,10 @@ var apiRouter = express.Router();
 app.use('/api', apiRouter)
 
 require('./routes/users.js')(apiRouter);
+console.log('database')
 require('./routes/sites.js')(apiRouter);
 require('./routes/products.js')(apiRouter);
 
-db.sync().then(function() {
+db.sync({force: true}).then(function() {
   app.listen(3000);
 })

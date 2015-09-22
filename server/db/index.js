@@ -29,7 +29,7 @@ var Product = sequelize.define('Product', {
   name: { type: Sequelize.STRING(32), allowNull: false },
   color: { type: Sequelize.STRING(32) },
   notes: { type: Sequelize.STRING(140) },
-  size: { type: Sequelize.STRING(32) }
+  size: { type: Sequelize.STRING(32) },
   OwnerId: { type: Sequelize.STRING(32) }
 });
 

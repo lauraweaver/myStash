@@ -1,6 +1,6 @@
 var Promise = require("bluebird");
 var Sequelize = require('sequelize');
-var db = require('./db')
+var db = require('../db');
 
 module.exports = {
   getSites: function(request, response) {
@@ -27,7 +27,7 @@ module.exports = {
 
   deleteSite: function(request) {
     var name = request.body.name
-    db.site.destroy(where: { name: name }).then(function() {
+    db.site.destroy({where: { name: name }}).then(function() {
       console.log('Deleted')
     })
   }

@@ -1,6 +1,6 @@
 var Promise = require("bluebird");
 var Sequelize = require('sequelize');
-var db = require('./db');
+var db = require('../db');
 var bcrypt = require('bcrypt-nodejs');
 
 module.exports = {
@@ -42,8 +42,10 @@ module.exports = {
             })
           }
         })  
+      }
     })
   },
+
   checkStatus: function(request, response) {
     User.findOne({where: {sessionId: sessionID}}).then(function(user) {
       if (user === null) {
@@ -51,6 +53,7 @@ module.exports = {
       }
     })
   },
+
   logout: function(request, response) {
     request.session.destroy(function(){
       response.redirect('/login');
@@ -68,6 +71,8 @@ module.exports = {
         cb(hash)
         //!!!
         // user.salt = salt;
+      })
+    })
   },
 
   checkUserSession: function(request, cb) {
@@ -79,10 +84,6 @@ module.exports = {
         cb(null);
       }
     })
-    .catch(function() {
-      console.log('catch');
-      cb(null);
-    });
   },
 
   checkUserExists: function(request, cb) {
