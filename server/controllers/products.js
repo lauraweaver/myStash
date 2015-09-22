@@ -20,8 +20,6 @@ module.exports = {
       name: name,
       color: color,
       size: size,
-      createdAt: new Date(),
-      updatedAt: new Date(),
       CategoryId: categoryId,
       MakerId: makerId
     }).then(function() {

@@ -1,3 +1,13 @@
+angular.module('myStash', ['ui.bootstrap'])
+
+.controller('mainController', function($scope) {
+  
+}
+
+
+
+
+
 angular.module('myStash', [
   'myStash.services',
   'myStash.links',

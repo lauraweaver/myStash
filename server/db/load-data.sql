@@ -83,7 +83,7 @@ INSERT INTO Tags (tag, createdAt, updatedAt) VALUES
   ('Mask', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
   ('Night', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO Products (name, color, notes, size, createdAt, updatedAt, CategoryId, MakerId, OwnerId) VALUES
+INSERT INTO Products (name, color, notes, size, createdAt, updatedAt, CategoryId, MakerId, UserId) VALUES
   ('Vitamin E Hand Treatment', NULL, 'Adam has this.', 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Skincare'), (SELECT id FROM Makers WHERE name='Jo Malone'), (SELECT id FROM Users WHERE name='lauraweaver')),
   ('Dry Texturizing Spray', NULL, NULL, 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Hair'), (SELECT id FROM Makers WHERE name='Oribe'), (SELECT id FROM Users WHERE name='lauraweaver')),
   ('Treatment Cleansing Foam', NULL, NULL, 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Skincare'), (SELECT id FROM Makers WHERE name='AmorePacific'), (SELECT id FROM Users WHERE name='lauraweaver')),
@@ -141,7 +141,7 @@ INSERT INTO Products (name, color, notes, size, createdAt, updatedAt, CategoryId
   ('Shine Pomade', NULL, 'Use when needing polished hair.', 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Hair'), (SELECT id FROM Makers WHERE name='drybar'), (SELECT id FROM Users WHERE name='lauraweaver')),
   ('Herbal Toner', NULL, NULL, 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Hair'), (SELECT id FROM Makers WHERE name='karina'), (SELECT id FROM Users WHERE name='lauraweaver')),
   ('Purifying Cleanser', NULL, NULL, 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Skincare'), (SELECT id FROM Makers WHERE name='karina'), (SELECT id FROM Users WHERE name='lauraweaver')),
-  ('Perfecting Skin Tint', 'Light', 'Super sheer; use when hot outside.', 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Makeup'), (SELECT id FROM Makers WHERE name='Glossier')),
+  ('Perfecting Skin Tint', 'Light', 'Super sheer; use when hot outside.', 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Makeup'), (SELECT id FROM Makers WHERE name='Glossier'), (SELECT id FROM Users WHERE name='lauraweaver')),
   ('Shade and Illuminate', NULL, NULL, 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Makeup'), (SELECT id FROM Makers WHERE name='Tom Ford'), (SELECT id FROM Users WHERE name='lauraweaver')),
   ('CC Cushion Compact', NULL, NULL, 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Makeup'), (SELECT id FROM Makers WHERE name='AmorePacific'), (SELECT id FROM Users WHERE name='lauraweaver')),
   ('Sheer Eye Shadow', 'Almond', NULL, 'Full', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Makeup'), (SELECT id FROM Makers WHERE name='Burberry'), (SELECT id FROM Users WHERE name='lauraweaver')),
@@ -201,7 +201,7 @@ INSERT INTO Products (name, color, notes, size, createdAt, updatedAt, CategoryId
   ('Revitalizing Black Hydration Gel', NULL, NULL, 'Travel', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Skincare'), (SELECT id FROM Makers WHERE name='Boscia'), (SELECT id FROM Users WHERE name='lauraweaver')),
   ('Lotion Yon-Ka', NULL, NULL, 'Travel', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Skincare'), (SELECT id FROM Makers WHERE name='Yon-Ka'), (SELECT id FROM Users WHERE name='lauraweaver'));
 
-INSERT INTO Site (name, url, createdAt, updatedAt) VALUES
+INSERT INTO Sites (name, url, createdAt, updatedAt) VALUES
   ('Into the Gloss', 'https://wwww.intothegloss.com/', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
   ('Lisa Eldridge', 'http://www.lisaeldridge.com/', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
   ('Refinery29-Beauty Blogs', 'http://www.refinery29.com/beauty-blogs', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
