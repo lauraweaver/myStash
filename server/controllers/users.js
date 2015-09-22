@@ -44,8 +44,18 @@ module.exports = {
         })  
     })
   },
-  checkStatus: function(request, response) {},
-  logout: function(request, response) {},
+  checkStatus: function(request, response) {
+    User.findOne({where: {sessionId: sessionID}}).then(function(user) {
+      if (user === null) {
+        res.redirect('/login');
+      }
+    })
+  },
+  logout: function(request, response) {
+    request.session.destroy(function(){
+      response.redirect('/login');
+    });
+  },
 
   // Helper Functions
 
