@@ -1,7 +1,7 @@
 USE beautydb;
 
-INSERT INTO Users (name, password, sessionId) VALUES
-  ('lauraweaver', 'blahblahblah', null);
+INSERT INTO Users (name, password) VALUES
+  ('lauraweaver', 'blahblahblah');
 
 INSERT INTO Categories (name, createdAt, updatedAt) VALUES
   ('Skincare', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),

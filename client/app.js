@@ -15,7 +15,7 @@ angular.module('myStash', [
   $routeProvider
     .when('/', {
       templateUrl: './products/products.html',
-      controller: 'productsController'
+      controller: 'appController'
     })
     .when('/login', {
       templateUrl: './auth/login.html',
