@@ -1,0 +1,7 @@
+<div id='container' ng-controller="SitesController">
+  <ul>
+    <li class="link" ng-repeat="site in data.sites">
+      <a id='siteName' ng-href="{{ site.url }}">{{ site.name }}</a>
+      <div id='siteURL' ng-href="{{ site.url }}">{{ site.url }}</div>
+  </ul>
+</div>

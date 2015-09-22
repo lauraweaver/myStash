@@ -8,9 +8,10 @@ module.exports = {
     //   return response.redirect('/#/login')
     // }
 
-    db.models.Product.findAll().then(function(products) {
-      response.json(products)
-    })
+    db.models.Product.findAll({include: [{model: db.models.Category}, {model: db.models.Maker}]})
+      .then(function(products) {
+        response.json(products)
+      })
   },
 
   addProduct: function(request, response) {

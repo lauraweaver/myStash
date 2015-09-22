@@ -4,9 +4,9 @@ var db = require('../db');
 
 module.exports = {
   getSites: function(request, response) {
-    if (!request.session.userId) {
-      return response.redirect('#/login')
-    }
+    // if (!request.session.userId) {
+    //   return response.redirect('#/login')
+    // }
     
     db.models.Site.findAll().then(function(sites) {
       response.json(sites)

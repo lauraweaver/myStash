@@ -3,21 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <title>myStash</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <h1>myStash</h1>
-<!--     <div ng-controller='mainController'>
-      <tabset>
-        <tab heading="Home">Home</tab>
-        <tab heading="Sites">Sites</tab>
-      </tabset>
-    </div> -->
+    <!-- <img src='polish.png'> -->
+    <h1>myStash <img src='polish.png'></h1>
+    <div class = "navigation">
+      <ul>
+        <li><a class="navNames" href="#/">Home</a></li>
+        <li><a class="navNames" href="#/sites">Blogs</a></li>
+      </ul>
+    </div>
 
     <div ng-view></div>
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     
     <script src="./app.js"></script>
     <script src="./services/services.js"></script>

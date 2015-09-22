@@ -29,6 +29,6 @@ require('./routes/users.js')(apiRouter);
 require('./routes/sites.js')(apiRouter);
 require('./routes/products.js')(apiRouter);
 
-db.sync().then(function() {
+db.sync({force: true}).then(function() {
   app.listen(3000);
 })

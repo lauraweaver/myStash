@@ -1,10 +1,12 @@
 <div id='container' ng-controller="ProductsController">
-  <form>
+  <form class="input">
   <input type="text" ng-model="filter" placeholder="Tu cherches quoi?">
   </form>
   <ul>
     <li class="product" ng-repeat="product in data.products | filter : filter">
-      <a >{{ product.name }}</a>
-      <a >{{ product.size }}</a>
+      <a id='name'>{{ product.name }}</a>
+      <a id='maker'>{{ product.Maker.name }}</a>
+      <a id='category'>{{ product.Category.name }}</a>
+      <a id='size'>{{ product.size }}</a>
   </ul>
 </div>

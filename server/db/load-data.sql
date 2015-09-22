@@ -202,7 +202,7 @@ INSERT INTO Products (name, color, notes, size, createdAt, updatedAt, CategoryId
   ('Lotion Yon-Ka', NULL, NULL, 'Travel', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, (SELECT id FROM Categories WHERE name='Skincare'), (SELECT id FROM Makers WHERE name='Yon-Ka'), (SELECT id FROM Users WHERE name='lauraweaver'));
 
 INSERT INTO Sites (name, url, createdAt, updatedAt) VALUES
-  ('Into the Gloss', 'https://wwww.intothegloss.com/', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+  ('Into the Gloss', 'https://intothegloss.com/', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
   ('Lisa Eldridge', 'http://www.lisaeldridge.com/', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
   ('Refinery29-Beauty Blogs', 'http://www.refinery29.com/beauty-blogs', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
   ('Beauty Banter', 'http://beautybanter.com/', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
