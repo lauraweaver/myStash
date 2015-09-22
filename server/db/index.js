@@ -42,5 +42,6 @@ var Site = sequelize.define('Site', {
 //Establish a connection between product & Category/Category.expiration/Tag/Maker
 Product.belongsTo(Category)
 Product.belongsTo(Maker)
+Product.belongsTo(User)
 
 module.exports = sequelize;

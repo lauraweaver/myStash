@@ -5,14 +5,18 @@ var bcrypt = require('bcrypt-nodejs');
 
 module.exports = {
   
-  attemptSignup: function(request, response) {
+  signup: function(request, response) {
     var username = request.body.username;
-    var password = request.body.password; /*!!!need to encrypt password*/
+    var password = request.body.password;
     var session_id = request.sessionID;
     
+    encryptPassword(password, function(hashedPassword) {
+      password = hashedPassword
+    })
+
     checkUserExists(request, function(user) {
       if (user !== null) {
-        response.redirect('/')
+        response.redirect('/login')
       } else {
         db.User.create({
           username: username,
@@ -25,7 +29,7 @@ module.exports = {
     })
   },
 
-  attemptLogin: function(request, response) {
+  login: function(request, response) {
     checkUserExists(request, function(user) {
       if (user !== null) {
         bcrypt.compare(password, user.password, function(err, result) {
@@ -44,6 +48,17 @@ module.exports = {
   logout: function(request, response) {},
 
   // Helper Functions
+
+  encryptPassword: function(password, cb) {
+    bcrypt.genSalt(10, function (err, salt) {
+      if (err) { return next(err) }
+      
+      bcrypt.hash(password, salt, null, function (err, hash) {
+        if (err) { return console.log('Error: ', err) }
+        cb(hash)
+        //!!!
+        // user.salt = salt;
+  },
 
   checkUserSession: function(request, cb) {
     db.User.findOne({where: {sessionId: request.sessionID}})
@@ -65,6 +80,4 @@ module.exports = {
       cb(user)
     })
   }
-
-
 }
