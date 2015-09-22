@@ -5,8 +5,7 @@ var sequelize = new Sequelize('beautydb', 'root');
 var User = sequelize.define('User', {
   id: { type: Sequelize.INTEGER, autoIncrement: true, allowNull: false, primaryKey: true },
   name: { type: Sequelize.STRING(32), allowNull: false },
-  password: { type: Sequelize.STRING(32) },
-  sessionId: { type: Sequelize.STRING(256) }
+  password: { type: Sequelize.STRING(140) }
 });
 
 var Maker = sequelize.define('Maker', {

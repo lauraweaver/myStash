@@ -4,26 +4,34 @@ var db = require('../db');
 
 module.exports = {
   getProducts: function(request, response) {
-    db.Product.findAll().then(function(products) {
+    if (!request.session.userId) {
+      return response.redirect('/login')
+    }
+
+    db.models.Product.findAll().then(function(products) {
       response.json(products)
     })
   },
 
   addProduct: function(request, response) {
+    if (!request.session.userId) {
+      return response.redirect('/login')
+    }
+
     var name = request.body.name
-    var color = request.body.color || NULL
-    var size = request.body.size || NULL
+    var color = request.body.color || null
+    var size = request.body.size || null
     var categoryId = 'do query'
     var makerId = 'do query'
 
-    db.Product.create({
+    db.models.Product.create({
       name: name,
       color: color,
       size: size,
       CategoryId: categoryId,
       MakerId: makerId
     }).then(function() {
-      db.Product.findOne({where: { name: name }}).then(
+      db.models.Product.findOne({where: { name: name }}).then(
         function(product) {
           response.json(product)
         }
@@ -32,8 +40,11 @@ module.exports = {
   },
 
   deleteProduct: function(request, response) {
+    if (!request.session.userId) {
+      return response.redirect('/login')
+    }
     var name = request.body.name
-    db.Product.destroy({where: { name: name }}).then(function() {
+    db.models.Product.destroy({where: { name: name }}).then(function() {
       console.log('Deleted')
     })
   }
