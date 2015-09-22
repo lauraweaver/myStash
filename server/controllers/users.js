@@ -11,7 +11,7 @@ module.exports = {
     
     checkUserExists(username, function(user) {
       if (user !== null) {
-        response.redirect('/login')
+        response.redirect('/#/login')
       } else {
         hashPassword(password, function(err, hashedPassword) {
           if (err) {
@@ -38,21 +38,21 @@ module.exports = {
       if (user !== null) {
         bcrypt.compare(password, user.password, function(err, result) {
           if (err || result === false) {
-            response.redirect('/login');
+            response.redirect('/#/login');
           } else {
             request.session.userId = user.id
             response.redirect('/')
           }
         })  
       } else {
-        response.redirect('/signup')
+        response.redirect('/#/signup')
       }
     })
   },
   //post request
   logout: function(request, response) {
     request.session.destroy(function(err){
-      response.redirect('/login');
+      response.redirect('/#/login');
     });
   },
 

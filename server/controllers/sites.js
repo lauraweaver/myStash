@@ -5,7 +5,7 @@ var db = require('../db');
 module.exports = {
   getSites: function(request, response) {
     if (!request.session.userId) {
-      return response.redirect('/login')
+      return response.redirect('#/login')
     }
     
     db.models.Site.findAll().then(function(sites) {
@@ -15,7 +15,7 @@ module.exports = {
 
   addSite: function(request, response) {
     if (!request.session.userId) {
-      return response.redirect('/login')
+      return response.redirect('#/login')
     }
 
     var name = request.body.name
@@ -35,7 +35,7 @@ module.exports = {
 
   deleteSite: function(request) {
     if (!request.session.userId) {
-      return response.redirect('/login')
+      return response.redirect('#/login')
     }
 
     var name = request.body.name

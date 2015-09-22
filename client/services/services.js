@@ -1,7 +1,7 @@
-angular.module('shortly.services', [])
+angular.module('myStash.services', [])
 
 .factory('Sites', function ($http) {
-  getSites: function() {
+  var getSites = function() {
     return $http({
       method: 'GET',
       url: '/api/sites'
@@ -9,9 +9,9 @@ angular.module('shortly.services', [])
     .then(function (response) {
       return response.data;
     });
-  },
+  };
 
-  addSite: function(site) {
+  var addSite = function(site) {
     return $http({
       method: 'POST',
       url: '/api/sites'
@@ -19,21 +19,26 @@ angular.module('shortly.services', [])
     .then(function() {
       return response.data;
     })
-  }
-});
+  };
+
+  return {
+    getSites: getSites,
+    addSite: addSite
+  };
+})
 
 .factory('Products', function ($http) {
-  getProducts: function() {
+  var getProducts = function() {
     return $http({
       method: 'GET',
-      url: '/api/products'
+      url: './api/products'
     })
     .then(function (response) {
       return response.data;
-    });
-  },
+    })
+  }
 
-  addProduct: function(product) {
+  var addProduct = function(product) {
     return $http({
       method: 'POST',
       url: '/api/products'
@@ -42,20 +47,28 @@ angular.module('shortly.services', [])
       return response.data;
     })
   }
-});
+  return {
+    getProducts: getProducts,
+    addProduct: addProduct
+  }
+})
 
 .factory('Auth', function($http) {
-  signup: function() {
+  var signup = function() {
     return $http({
       method: 'POST',
       url: '/api/users/signup'
     })
-  },
+  };
 
-  login: function() {
+  var login = function() {
     return $http({
       method: 'POST',
       url: '/api/users/login'
     })
   }
+  return {
+    login: login,
+    signup: signup
+  };
 })

@@ -1,46 +1,45 @@
-angular.module('myStash', ['ui.bootstrap'])
-
-.controller('mainController', function($scope) {
-
-}
-
 angular.module('myStash', [
+  'ui.bootstrap', 
   'myStash.services',
-  'myStash.links',
-  'myStash.shorten',
-  'myStash.authentication',
-  'ngRoute'
-])
+  'myStash.products',
+  'myStash.sites',
+  'myStash.auth',
+  'ngRoute'])
+
+
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {
       templateUrl: './products/products.html',
-      controller: 'appController'
+      controller: 'ProductsController'
     })
-    .when('/login', {
-      templateUrl: './auth/login.html',
+    .when('/#/login', {
+      templateUrl: './authentication/login.html',
       controller: 'AuthController'
     })
-    .when('/signup', {
-      templateUrl: './auth/signup.html',
+    .when('/#/signup', {
+      templateUrl: './authentication/signup.html',
       controller: 'AuthController'
     })
-    .when('/sites', {
+    .when('/#/sites', {
       templateUrl: './sites/sites.html',
       controller: 'sitesController'
     })
 })
 // .run(function ($rootScope, $location, Auth) {
-//   // here inside the run phase of angular, our services and controllers
-//   // have just been registered and our app is ready
-//   // however, we want to make sure the user is authorized
-//   // we listen for when angular is trying to change routes
-//   // when it does change routes, we then look for the token in localstorage
-//   // and send that token to the server to see if it is a real user or hasn't expired
-//   // if it's not valid, we then redirect back to signin/signup
-//   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
-//     if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
-//       $location.path('/signin');
-//     }
+//   app.run(function(editableOptions) {
+//     editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
 //   });
 // });
+
+.controller('mainController', function($scope) {
+  // $scope.data = {};
+
+  // $scope.tabs = [
+  //     { title:'Home', content:'Dynamic content 1' },
+  //     { title:'Sites', content:'Dynamic content 2' }
+  //   ];
+  });
+
+//   $scope.getProducts();
+// }

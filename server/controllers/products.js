@@ -4,9 +4,9 @@ var db = require('../db');
 
 module.exports = {
   getProducts: function(request, response) {
-    if (!request.session.userId) {
-      return response.redirect('/login')
-    }
+    // if (!request.session.userId) {
+    //   return response.redirect('/#/login')
+    // }
 
     db.models.Product.findAll().then(function(products) {
       response.json(products)
@@ -15,7 +15,7 @@ module.exports = {
 
   addProduct: function(request, response) {
     if (!request.session.userId) {
-      return response.redirect('/login')
+      return response.redirect('/#/login')
     }
 
     var name = request.body.name
@@ -41,7 +41,7 @@ module.exports = {
 
   deleteProduct: function(request, response) {
     if (!request.session.userId) {
-      return response.redirect('/login')
+      return response.redirect('/#/login')
     }
     var name = request.body.name
     db.models.Product.destroy({where: { name: name }}).then(function() {

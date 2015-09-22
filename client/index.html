@@ -2,28 +2,27 @@
 <html ng-app='myStash'>
   <head>
     <meta charset="utf-8" />
-    <title>Shortly</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <title>myStash</title>
   </head>
   <body>
     <h1>myStash</h1>
-    <div class = "navigation">
-      <ul>
-        <li><a href="#/">HOME</a></li>
-        <li><a href="#/sites">SITES</a></li>
-      </ul>
-    </div>
+<!--     <div ng-controller='mainController'>
+      <tabset>
+        <tab heading="Home">Home</tab>
+        <tab heading="Sites">Sites</tab>
+      </tabset>
+    </div> -->
 
     <div ng-view></div>
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-
-    <script src="auth/authentication.js"></script>
-    <script src="products/products.js"></script>
-    <script src="sites/sites.js"></script>
-    <script src="services/services.js"></script>
-    <script src="app.js"></script>
+    
+    <script src="./app.js"></script>
+    <script src="./services/services.js"></script>
+    <script src="./products/products.js"></script>
+    <script src="./sites/sites.js"></script>
+    <script src="./authentication/authentication.js"></script>
   </body>
 </html>
