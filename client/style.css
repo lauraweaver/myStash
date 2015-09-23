@@ -73,11 +73,16 @@ ul {
 }
 
 .product #name {
- font-size: 18px; 
+  font-size: 18px; 
 }
 
-.product #category {
+.product #maker {
   font-style: italic;
+  font-size: 16px; 
+}
+
+
+.product #category {
   font-size: 14px; 
 }
 

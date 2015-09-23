@@ -5,8 +5,9 @@
   <ul>
     <li class="product" ng-repeat="product in data.products | filter : filter">
       <a id='name'>{{ product.name }}</a>
-      <a id='maker'>{{ product.Maker.name }}</a>
-      <a id='category'>{{ product.Category.name }}</a>
-      <a id='size'>{{ product.size }}</a>
+      <span id='maker'>{{ product.Maker.name }}</span>
+      <span id='category'>{{ product.Category.name }}</span>
+      <span id='size'>{{ product.size }}</span>
+
   </ul>
 </div>
